@@ -10,7 +10,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     Provider.of<CrudProvider>(context, listen: false).getData();
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal,
+        title: Text("DATA", style: TextStyle(fontWeight: FontWeight.w900)),
+      ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.teal,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (ctx) => MyAdd()));
         },
